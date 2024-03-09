@@ -93,12 +93,12 @@ fn main() {
         file.write_all(&decoded_message).expect("Failed to write to file");
         return;
     } else if command == "help" {
-        println!("Usage: cargo run [encode|decode|help]"); 
-        print!("encode: encode <image_path> <secret_file_path>\n");
-        print!("decode: decode <image_path> <output_file_path>\n");
+        println!("Usage: mylsb [encode|decode|help]"); 
+        print!("encode: ./mylsb <image_path> <secret_file_path>\n");
+        print!("decode: ./mylsb <image_path> <output_file_path>\n");
         return;
     } else {
-        println!("Usage: cargo run [encode|decode|help]"); 
+        println!("Usage: ./mylsb [encode|decode|help]"); 
         return;
     }
 }

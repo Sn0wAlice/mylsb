@@ -3,16 +3,7 @@ name: Build
 # Controls when the workflow will run
 on:
   workflow_dispatch:
-    inputs:
-      upgrade: 
-        type: choice
-        description: 'Upgrade'
-        required: true
-        options:
-          - patch
-          - minor
-          - major
-  
+
 permissions:
   contents: write
 
@@ -83,15 +74,15 @@ jobs:
           - name: linux
             os: ubuntu-latest
             artifact_name: target/release/mylsb
-            asset_name: mylsb-linux-${{needs.newversion.outputs.version}}
+            asset_name: mylsb-linux
           - name: windows
             os: windows-latest
             artifact_name: target/release/mylsb.exe
-            asset_name: mylsb-windows-${{needs.newversion.outputs.version}}.exe
+            asset_name: mylsb-windows.exe
           - name: macos
             os: macos-latest
             artifact_name: target/release/mylsb
-            asset_name: mylsb-macos-${{needs.newversion.outputs.version}}
+            asset_name: mylsb-macos
 
     steps:
       - uses: actions/checkout@v4
